@@ -1,5 +1,6 @@
 body {
   padding: 80px 0 0 0;
+  background: #edf0f1;
 }
 
 body, input, button {
@@ -45,20 +46,26 @@ header input {
   appearance: none;
 }
 
-header input::-webkit-input-placholder {
-  color: rgba(255, 255, 255, 0.75);
+@media only screen and (max-width: 760px) {
+  header input {
+    width: 90%;
+   }
 }
 
-header input:-moz-input-placholder {
-  color: rgba(255, 255, 255, 0.75);
+header input::-webkit-input-placeholder {
+  color: #fff;
 }
 
-header input:-ms-input-placholder {
-  color: rgba(255, 255, 255, 0.75);
+header input:-moz-input-placeholder {
+  color: #fff;
 }
 
-header input::-moz-input-placholder {
-  color: rgba(255, 255, 255, 0.75);
+header input:-ms-input-placeholder {
+  color: #fff;
+}
+
+header input::-moz-input-placeholder {
+  color: #fff;
 }
 
 header button {
@@ -73,10 +80,18 @@ header button {
   border: 0px;
   box-shadow: none;
   outline: none;
+  cursor: pointer;
 
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
+}
+
+header button img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px;
 }
