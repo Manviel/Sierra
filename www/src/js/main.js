@@ -59,6 +59,7 @@ function removeItem() {
     data.completed.splice(data.completed.indexOf(value), 1);
   }
   dataObjectUpdated();
+
   parent.removeChild(item);
 }
 
@@ -76,4 +77,9 @@ function completeItem() {
     data.todo.push(value);
   }
   dataObjectUpdated();
+
+  var target = (id === 'todo') ? document.getElementById('completed'):document.getElementById('todo');
+
+  parent.removeChild(item);
+  target.insertBefore(item, target.childNodes[0]);
 }
