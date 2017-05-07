@@ -233,12 +233,12 @@ ul.todo#completed:before {
 }
 
 ul.todo#todo:empty:after {
-  content: 'You have nothing to-do!';
+  content: 'Тебе нечего делать!';
   margin: 15px 0 0 0;
 }
 
 ul.todo#completed:empty:after {
-  content: 'You have yet to complete any tasks.';
+  content: 'Тебе еще предстоит выполнить задачи.';
 }
 
 ul.todo#todo:after,
