@@ -4,8 +4,8 @@
     <description>
         A blank PhoneGap app.
     </description>
-    <author email="mmieriezhko@gmail.com">
-        Michael Merezhko
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
     </author>
     <content src="index.html" />
     <access origin="*" />
