@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>Sierra</title>
-        <!--Roboto font -->
         <style>
+        /* Roboto font */
         @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
         </style>
         <link rel="stylesheet" type="text/css" href="src/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="src/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="src/css/popup.css" />
     </head>
     <body>
 
@@ -25,6 +25,22 @@
 
         <ul class="todo" id="completed"></ul>
       </div>
+
+      <div class="container">
+        <p class="show">
+          <a href="#openModal1">About</a>
+        </p>
+      </div>
+
+      <div id="openModal1" class="modalDialog">
+        <div>
+          <a href="#close" title="Close" class="close">&#215;</a>
+          <h2>Modal Box 1</h2>
+          <p>This is a sample modal box that can be created using the powers of CSS3.    </p>
+          <p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for  users.</p>
+        </div>
+      </div>
+
 
         <script src="src/js/main.js"></script>
         <script type="text/javascript" src="cordova.js"></script>

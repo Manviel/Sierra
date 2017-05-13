@@ -42,10 +42,6 @@ header input {
   border: 0px;
   box-shadow: none;
   outline: none;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
   appearance: none;
 }
 
@@ -78,10 +74,6 @@ header button {
   box-shadow: none;
   outline: none;
   cursor: pointer;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
   appearance: none;
 }
 
@@ -99,7 +91,7 @@ header button svg .fill {
 }
 
 .container {
-  width: 97%;
+  width: 98%;
   float: left;
   padding: 15px;
 }
@@ -149,10 +141,6 @@ ul.todo li .buttons button {
   box-shadow: none;
   outline: none;
   cursor: pointer;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
   appearance: none;
 }
 
@@ -178,7 +166,6 @@ ul.todo li .buttons button svg {
 ul.todo li .buttons button.complete svg {
   border-radius: 11px;
   border: 1.5px solid #00FA9A;
-  transition: background 0.2s ease;
 }
 
 ul.todo#completed li .buttons button.complete svg {
@@ -224,21 +211,21 @@ ul.todo#completed:before {
   width: 150px;
   height: 1px;
   background: #d8e5e0;
-
   position: absolute;
   top: 30px;
   left: 50%;
-
   margin: 0 0 0 -75px;
 }
 
 ul.todo#todo:empty:after {
   content: 'Тебе нечего делать!';
   margin: 15px 0 0 0;
+  align-content: center;
 }
 
 ul.todo#completed:empty:after {
   content: 'Тебе еще предстоит выполнить задачи.';
+  align-content: center;
 }
 
 ul.todo#todo:after,
