@@ -218,13 +218,13 @@ ul.todo#completed:before {
 }
 
 ul.todo#todo:empty:after {
-  content: 'Тебе нечего делать!';
+  content: 'You have nothing to-do!';
   margin: 15px 0 0 0;
   align-content: center;
 }
 
 ul.todo#completed:empty:after {
-  content: 'Тебе еще предстоит выполнить задачи.';
+  content: 'You have yet to complete any tasks.';
   align-content: center;
 }
 
