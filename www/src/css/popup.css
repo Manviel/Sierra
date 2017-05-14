@@ -57,6 +57,11 @@ a:visited {
   color: #808080;
 }
 
+img {
+  height: 20px;
+  width: 20px;
+}
+
 .show {
   width: 95%;
   text-align: center;
