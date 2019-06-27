@@ -1,6 +1,8 @@
 # Sierra
 
-> Nuxt JS framework
+### Nuxt JS framework
+
+Course: https://coursehunters.net/course/freymvork-nuxtjs-rukovodstvo-po-fullstack-razrabotke
 
 ## Build Setup
 
