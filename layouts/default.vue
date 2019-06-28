@@ -1,9 +1,7 @@
 <template>
-  <main>
+  <main class="container-fluid">
     <NavBar/>
-    <div class="container">
-      <nuxt/>
-    </div>
+    <nuxt/>
   </main>
 </template>
 
