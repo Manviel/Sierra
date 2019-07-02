@@ -1,11 +1,17 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <nuxt-link class="navbar-brand" to="/">Home</nuxt-link>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <nuxt-link class="nav-link" to="/users">Link</nuxt-link>
-      </li>
-    </ul>
+  <nav class="nav flex-column nav-pills">
+    <nuxt-link class="nav-link" to="/">Home</nuxt-link>
+    <nuxt-link class="nav-link" to="/users">Log in</nuxt-link>
   </nav>
 </template>
+
+<style>
+.nuxt-link-exact-active {
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+</style>
+
 

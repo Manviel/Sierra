@@ -1,5 +1,5 @@
 <template>
-  <section class="d-flex flex-column pt-3">
+  <section class="d-flex flex-column">
     <div class="card mb-3" v-for="post in 3" :key="post">
       <div class="card-header">Featured</div>
       <div class="card-body">
