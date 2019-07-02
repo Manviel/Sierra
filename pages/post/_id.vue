@@ -18,7 +18,7 @@
       <h6 class="card-subtitle text-muted">Person</h6>
       <p class="card-text">Comment</p>
     </div>
-    <comment-form />
+    <CommentForm />
   </div>
 </template>
 
@@ -26,6 +26,7 @@
 import CommentForm from "@/components/CommentForm";
 
 export default {
+  middleware: "admin",
   validate({ params }) {
     return Boolean(params.id);
   },

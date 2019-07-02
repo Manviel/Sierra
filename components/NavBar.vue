@@ -1,7 +1,8 @@
 <template>
   <nav class="nav flex-column nav-pills">
     <nuxt-link class="nav-link" to="/">Home</nuxt-link>
-    <nuxt-link class="nav-link" to="/users">Log in</nuxt-link>
+    <nuxt-link class="nav-link" to="/login">Log in</nuxt-link>
+    <nuxt-link class="nav-link" to="/logout">Log out</nuxt-link>
   </nav>
 </template>
 

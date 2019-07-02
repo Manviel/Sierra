@@ -5,6 +5,9 @@ export const state = () => ({
 export const mutations = {
   setToken(state, token) {
     state.token = token;
+  },
+  clearToken(state) {
+    state.token = null;
   }
 };
 
@@ -15,7 +18,10 @@ export const actions = {
     dispatch("setToken", token);
   },
   async setToken({ commit }, token) {
-    commit("setToken", token);
+    await commit("setToken", token);
+  },
+  async logout({ commit }) {
+    await commit("clearToken");
   }
 };
 
