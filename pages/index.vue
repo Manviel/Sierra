@@ -6,14 +6,14 @@
         <h5 class="card-title d-flex justify-content-between">
           Card title
           <span>
-            <font-awesome-icon :icon="['fas', 'stopwatch']"/>
-            {{ new Date().toLocaleString() }}
+            <font-awesome-icon :icon="['fas', 'stopwatch']" />
+            {{ new Date().toISOString().slice(0, 10) }}
           </span>
         </h5>
         <p class="card-text">This is some text within a card body</p>
         <span class="d-flex justify-content-between align-items-center">
           <nuxt-link to="/post/1" class="btn btn-outline-primary">Go somewhere</nuxt-link>
-          <font-awesome-icon :icon="['fas', 'envelope']"/>
+          <font-awesome-icon :icon="['fas', 'envelope']" />
         </span>
       </div>
     </div>
