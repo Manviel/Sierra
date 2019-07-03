@@ -9,25 +9,18 @@
         <h5 class="card-title">{{ post.title }}</h5>
         <span>
           <font-awesome-icon :icon="['fas', 'stopwatch']" />
-          {{ post.date.toISOString().slice(0, 10) }}
+          {{ new Date(post.date).toISOString().slice(0, 10) }}
         </span>
       </section>
       <p class="card-text">{{ post.text }}</p>
+      <p class="card-text" v-if="post.views">{{ post.views }} views</p>
     </div>
-    <div class="card-body border my-1 mx-4" v-for="comment in post.views" :key="comment">
-      <h6 class="card-subtitle text-muted">Person</h6>
-      <p class="card-text">Comment</p>
-    </div>
-    <CommentForm />
   </div>
 </template>
 
 <script>
-import CommentForm from "@/components/CommentForm";
-
 export default {
   middleware: "admin",
-  components: { CommentForm },
   async asyncData({ store, params }) {
     const post = await store.dispatch("post/fetchById", params.id);
 
