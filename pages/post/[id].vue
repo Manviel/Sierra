@@ -1,11 +1,11 @@
 <template>
-  <div class="card mt-3">
+  <div v-if="post" class="card mt-3">
     <div class="card-header">{{ post.header }}</div>
     <div class="card-body">
       <section class="d-flex justify-content-between">
-        <nuxt-link to="/">
+        <NuxtLink to="/">
           <font-awesome-icon :icon="['fas', 'arrow-left']" />
-        </nuxt-link>
+        </NuxtLink>
         <h5 class="card-title">{{ post.title }}</h5>
         <span>
           <font-awesome-icon :icon="['fas', 'stopwatch']" />
@@ -13,19 +13,20 @@
         </span>
       </section>
       <p class="card-text">{{ post.text }}</p>
-      <p class="card-text" v-if="post.views">{{ post.views }} views</p>
+      <p v-if="post.views" class="card-text">{{ post.views }} views</p>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  middleware: "admin",
-  async asyncData({ store, params }) {
-    const post = await store.dispatch("post/fetchById", params.id);
+<script setup>
+import { usePostStore } from '~/stores/post'
 
-    return { post };
-  }
-};
+definePageMeta({
+  middleware: 'admin'
+})
+
+const route = useRoute()
+const postStore = usePostStore()
+
+const { data: post } = await useAsyncData(`post-${route.params.id}`, () => postStore.fetchById(route.params.id))
 </script>
-

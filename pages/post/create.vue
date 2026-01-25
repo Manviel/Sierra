@@ -1,50 +1,45 @@
 <template>
-  <form class="card-body m-1" v-on:submit.prevent="onSubmit">
+  <form class="card-body m-1" @submit.prevent="onSubmit">
     <h2>Create post</h2>
-    <div class="form-group">
-      <label>Header</label>
-      <input type="text" class="form-control" placeholder="Header" v-model="header" required />
+    <div class="mb-3">
+      <label class="form-label">Header</label>
+      <input v-model="formData.header" type="text" class="form-control" placeholder="Header" required />
     </div>
-    <div class="form-group">
-      <label>Title</label>
-      <input type="text" class="form-control" placeholder="Title" v-model="title" required />
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input v-model="formData.title" type="text" class="form-control" placeholder="Title" required />
     </div>
-    <div class="form-group">
-      <label>Text</label>
-      <input type="text" class="form-control" placeholder="Text" v-model="text" required />
+    <div class="mb-3">
+      <label class="form-label">Text</label>
+      <input v-model="formData.text" type="text" class="form-control" placeholder="Text" required />
     </div>
-    <div class="form-group">
-      <label>Date</label>
-      <input type="date" class="form-control" v-model="date" required />
+    <div class="mb-3">
+      <label class="form-label">Date</label>
+      <input v-model="formData.date" type="date" class="form-control" required />
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </template>
 
-<script>
-export default {
-  middleware: "admin",
-  data() {
-    return {
-      header: "",
-      title: "",
-      text: "",
-      date: null
-    };
-  },
-  methods: {
-    onSubmit() {
-      const formData = {
-        header: this.header,
-        title: this.title,
-        text: this.text,
-        date: this.date
-      };
+<script setup>
+import { usePostStore } from '~/stores/post'
 
-      this.$store.dispatch("post/create", formData);
-      this.$router.push("/");
-    }
-  }
-};
+definePageMeta({
+  middleware: 'admin'
+})
+
+const postStore = usePostStore()
+const router = useRouter()
+
+const formData = ref({
+  header: '',
+  title: '',
+  text: '',
+  date: null
+})
+
+const onSubmit = async () => {
+  await postStore.create({ ...formData.value })
+  router.push('/')
+}
 </script>
-

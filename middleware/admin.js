@@ -1,5 +1,8 @@
-export default function({ store, redirect }) {
-  if (!store.getters["auth/isAuth"]) {
-    return redirect("/login");
+import { useAuthStore } from '~/stores/auth'
+
+export default defineNuxtRouteMiddleware((to, from) => {
+  const authStore = useAuthStore()
+  if (!authStore.isAuth) {
+    return navigateTo('/login')
   }
-}
+})

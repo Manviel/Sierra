@@ -1,42 +1,34 @@
 <template>
-  <form class="card-body m-1" v-on:submit.prevent="onSubmit">
+  <form class="card-body m-1" @submit.prevent="onSubmit">
     <h2>Admin login panel</h2>
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" class="form-control" placeholder="Enter name" v-model="name" required />
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input v-model="name" type="text" class="form-control" placeholder="Enter name" required />
     </div>
-    <div class="form-group">
-      <label>Password</label>
-      <input
-        type="password"
-        class="form-control"
-        placeholder="Enter password"
-        v-model="password"
-        required
-      />
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input v-model="password" type="password" class="form-control" placeholder="Enter password" required />
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      name: "",
-      password: ""
-    };
-  },
-  methods: {
-    onSubmit() {
-      const userData = {
-        name: this.name,
-        password: this.password
-      };
+<script setup>
+import { useAuthStore } from '~/stores/auth'
 
-      this.$store.dispatch("auth/login", userData);
-      this.$router.push("/");
-    }
+const authStore = useAuthStore()
+const router = useRouter()
+
+const name = ref('')
+const password = ref('')
+
+const onSubmit = async () => {
+  const userData = {
+    name: name.value,
+    password: password.value
   }
-};
+
+  await authStore.login(userData)
+  router.push('/')
+}
 </script>
